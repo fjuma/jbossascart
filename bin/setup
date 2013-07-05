@@ -12,5 +12,3 @@ mkdir -p ${OPENSHIFT_JBOSSAS_DIR}/{template,standalone/tmp,standalone/deployment
 # Copy the version specific files up to jbossas directory
 cp -r ${OPENSHIFT_JBOSSAS_DIR}/versions/${version}/standalone/configuration/* ${OPENSHIFT_JBOSSAS_DIR}/standalone/configuration
 cp ${OPENSHIFT_JBOSSAS_DIR}/versions/${version}/bin/* ${OPENSHIFT_JBOSSAS_DIR}/bin
-mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main/
-cp ${OPENSHIFT_JBOSSAS_DIR}/versions/${version}/modules/org/jboss/aerogear/netty/main/module.xml /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main/module.xml

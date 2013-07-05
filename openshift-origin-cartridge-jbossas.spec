@@ -75,6 +75,7 @@ alternatives --set jbossas-7 /usr/share/jboss-as
 mkdir -p /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
 ln -fs /usr/share/java/postgresql-jdbc3.jar /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
 cp -p %{cartridgedir}/versions/7/modules/postgresql_module.xml /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main/module.xml
+mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main/
 
 %posttrans
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}

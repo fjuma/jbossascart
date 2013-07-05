@@ -1,9 +1,9 @@
-%global cartridgedir %{_libexecdir}/openshift/cartridges/jbossas
+%global cartridgedir %{_libexecdir}/openshift/cartridges/agunifiedpush
 %global jbossver 7.1.1.Final
 %global oldjbossver 7.1.0.Final
 
 Summary:       Provides JBossAS7 support
-Name:          openshift-origin-cartridge-jbossas
+Name:          openshift-origin-cartridge-agunifiedpush
 Version: 1.4.1
 Release:       1%{?dist}
 Group:         Development/Languages
@@ -28,8 +28,6 @@ Requires:      maven
 %endif
 BuildRequires: jpackage-utils
 BuildArch:     noarch
-
-Obsoletes: openshift-origin-cartridge-jbossas-7
 
 %description
 Provides JBossAS support to OpenShift. (Cartridge Format V2)

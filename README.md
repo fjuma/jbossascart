@@ -97,12 +97,12 @@ automatically deployed into the server runtime.
 The `jbossas` cartridge provides several environment variables to reference for ease
 of use:
 
-    OPENSHIFT_JBOSSAS_IP                         The IP address used to bind JBossAS
-    OPENSHIFT_JBOSSAS_HTTP_PORT                  The JBossAS listening port
-    OPENSHIFT_JBOSSAS_CLUSTER_PORT               TODO
-    OPENSHIFT_JBOSSAS_MESSAGING_PORT             TODO
-    OPENSHIFT_JBOSSAS_MESSAGING_THROUGHPUT_PORT  TODO
-    OPENSHIFT_JBOSSAS_REMOTING_PORT              TODO
+    OPENSHIFT_AGUNIFIEDPUSH_IP                         The IP address used to bind JBossAS
+    OPENSHIFT_AGUNIFIEDPUSH_HTTP_PORT                  The JBossAS listening port
+    OPENSHIFT_AGUNIFIEDPUSH_CLUSTER_PORT               TODO
+    OPENSHIFT_AGUNIFIEDPUSH_MESSAGING_PORT             TODO
+    OPENSHIFT_AGUNIFIEDPUSH_MESSAGING_THROUGHPUT_PORT  TODO
+    OPENSHIFT_AGUNIFIEDPUSH_REMOTING_PORT              TODO
 
 For more information about environment variables, consult the
 [OpenShift Application Author Guide](https://github.com/openshift/origin-server/blob/master/node/README.writing_applications.md).

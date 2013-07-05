@@ -3,6 +3,7 @@
 <server xmlns="urn:jboss:domain:1.1">
 
     <extensions>
+        <extension module="org.jboss.aerogear.netty"/>
         <extension module="org.jboss.as.clustering.infinispan"/>
         <extension module="org.jboss.as.clustering.jgroups"/>
         <extension module="org.jboss.as.cmp"/>
@@ -50,6 +51,11 @@
     </management>
 
     <profile>
+        <subsystem xmlns="urn:org.jboss.aerogear.netty:1.0">
+            <netty>
+                <server name="simplepush-server" socket-binding="simplepush" factoryClass="org.jboss.aerogear.simplepush.netty.SimplePushBootstrapFactory"/>
+            </netty>
+        </subsystem>
         <subsystem xmlns="urn:jboss:domain:logging:1.1">
             <!--console-handler name="CONSOLE">
                 <level name="INFO"/>
@@ -536,6 +542,7 @@
         <socket-binding name="messaging-throughput" port="5455"/>
         <socket-binding name="osgi-http" interface="management" port="8090"/>
         <socket-binding name="remoting" port="4447"/>
+        <socket-binding name="simplepush" port="15009"/>
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <outbound-socket-binding name="mail-smtp">

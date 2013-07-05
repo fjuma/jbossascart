@@ -75,7 +75,12 @@ alternatives --set jbossas-7 /usr/share/jboss-as
 mkdir -p /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
 ln -fs /usr/share/java/postgresql-jdbc3.jar /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
 cp -p %{cartridgedir}/versions/7/modules/postgresql_module.xml /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main/module.xml
-mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main/
+
+# Add the AeroGear netty module
+mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty
+pushd /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty 1> /dev/null
+  ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/netty/main
+popd 1> /dev/null
 
 %posttrans
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}

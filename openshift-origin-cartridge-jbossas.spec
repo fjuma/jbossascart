@@ -80,6 +80,10 @@ cp -p %{cartridgedir}/versions/7/modules/postgresql_module.xml /etc/alternatives
 mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
 ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/netty/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
 
+# Add the AeroGear SimplePush module
+mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
+ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/simplepush/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
+
 %posttrans
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}
 

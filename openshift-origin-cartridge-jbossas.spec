@@ -4,7 +4,7 @@
 
 Summary:       Provides JBossAS7 support
 Name:          openshift-origin-cartridge-agunifiedpush
-Version: 1.4.1
+Version: 1.4.2
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
@@ -98,6 +98,9 @@ ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/simplepush/main/* /
 
 
 %changelog
+* Fri Jul 05 2013 Farah Juma <fjuma@redhat.com> 1.4.2-1
+- new package built with tito
+
 * Tue Jun 25 2013 Adam Miller <admiller@redhat.com> 1.4.1-1
 - bump_minor_versions for sprint 30 (admiller@redhat.com)
 

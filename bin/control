@@ -75,16 +75,6 @@ function ishttpup() {
     return 1
 }
 
-function deploy() {
-  echo "Deploying JBoss"
-
-  if [ "$(ls ${OPENSHIFT_REPO_DIR}/deployments)" ]; then
-    rsync -r --delete --exclude ".*" ${OPENSHIFT_REPO_DIR}/deployments/ ${OPENSHIFT_JBOSSAS_DIR}/standalone/deployments/
-  else
-    rm -rf ${OPENSHIFT_JBOSSAS_DIR}/standalone/deployments/*
-  fi
-}
-
 function start() {
   echo "Starting $cartridge_type cart"
 
@@ -170,7 +160,6 @@ function threaddump() {
 }
 
 case "$1" in
-  deploy)          deploy ;;
   start)           start ;;
   stop)            stop ;;
   restart)         restart ;;

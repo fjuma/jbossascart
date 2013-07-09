@@ -109,43 +109,43 @@ function build() {
 
   OPENSHIFT_MAVEN_XMX="-Xmx${max_heap}m"
 
-  if [ -z "$BUILD_NUMBER" ]
-  then
-      if marker_present force_clean_build
-      then
-          echo ".openshift/markers/force_clean_build found!  Removing Maven dependencies." 1>&2
-          rm -rf ${OPENSHIFT_HOMEDIR}.m2/* ${OPENSHIFT_HOMEDIR}.m2/.[^.]*
-      fi
+  #if [ -z "$BUILD_NUMBER" ]
+  #then
+      #if marker_present force_clean_build
+      #then
+      #    echo ".openshift/markers/force_clean_build found!  Removing Maven dependencies." 1>&2
+      #    rm -rf ${OPENSHIFT_HOMEDIR}.m2/* ${OPENSHIFT_HOMEDIR}.m2/.[^.]*
+      #fi
 
-      if [ -f ${OPENSHIFT_REPO_DIR}pom.xml ] && ! marker_present skip_maven_build
-      then
-          update-configuration
+      #if [ -f ${OPENSHIFT_REPO_DIR}pom.xml ] && ! marker_present skip_maven_build
+      #then
+      #    update-configuration
 
-          export MAVEN_OPTS="$OPENSHIFT_MAVEN_XMX"
-          export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
-          pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+      #    export MAVEN_OPTS="$OPENSHIFT_MAVEN_XMX"
+      #    export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
+      #    pushd ${OPENSHIFT_REPO_DIR} > /dev/null
 
-          if [ -z "$MAVEN_OPTS" ]; then
-            export MAVEN_OPTS="$OPENSHIFT_MAVEN_XMX"
-          fi
+      #    if [ -z "$MAVEN_OPTS" ]; then
+      #      export MAVEN_OPTS="$OPENSHIFT_MAVEN_XMX"
+      #    fi
 
-          if [ -z "$MAVEN_ARGS" ]; then
-          export MAVEN_ARGS="clean package -Popenshift -DskipTests"
-          fi
+      #    if [ -z "$MAVEN_ARGS" ]; then
+      #    export MAVEN_ARGS="clean package -Popenshift -DskipTests"
+      #    fi
 
-          echo "Found pom.xml... attempting to build with 'mvn -e ${MAVEN_ARGS}'"
+      #    echo "Found pom.xml... attempting to build with 'mvn -e ${MAVEN_ARGS}'"
 
-          if [ -n "$OPENSHIFT_MAVEN_MIRROR" ]
-          then
-              mvn --global-settings $OPENSHIFT_MAVEN_MIRROR --version
-              mvn --global-settings $OPENSHIFT_MAVEN_MIRROR $MAVEN_ARGS
-          else
-              mvn --version
-              mvn $MAVEN_ARGS
-          fi
-          popd > /dev/null
-      fi
-  fi
+      #    if [ -n "$OPENSHIFT_MAVEN_MIRROR" ]
+      #    then
+      #        mvn --global-settings $OPENSHIFT_MAVEN_MIRROR --version
+      #        mvn --global-settings $OPENSHIFT_MAVEN_MIRROR $MAVEN_ARGS
+      #    else
+      #        mvn --version
+      #        mvn $MAVEN_ARGS
+      #    fi
+      #    popd > /dev/null
+      #fi
+  #fi
 
 }
 

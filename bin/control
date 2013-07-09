@@ -75,10 +75,6 @@ function ishttpup() {
     return 1
 }
 
-function build() {
-    echo "Build"
-}
-
 function deploy() {
   echo "Deploying JBoss"
 
@@ -174,7 +170,6 @@ function threaddump() {
 }
 
 case "$1" in
-  build)           build ;;
   deploy)          deploy ;;
   start)           start ;;
   stop)            stop ;;

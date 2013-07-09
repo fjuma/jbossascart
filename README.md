@@ -1,6 +1,6 @@
-# OpenShift JBossAS Cartridge
+# OpenShift AeroGear Unified Push Cartridge
 
-Provides the JBossAS application server on OpenShift.
+Provides the AeroGear Unified Push Server on OpenShift.
 
 ## Template Repository Layout
 

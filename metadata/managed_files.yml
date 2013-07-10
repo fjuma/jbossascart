@@ -10,5 +10,6 @@ locked_files:
 - env/OPENSHIFT_JBOSSAS_JDK*
 - env/OPENSHIFT_JBOSSAS_VERSION
 - env/M2_HOME
+- standalone/deployments/*
 processed_templates:
 - '**/*.erb'

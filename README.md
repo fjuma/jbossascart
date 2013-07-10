@@ -2,6 +2,13 @@
 
 Provides the AeroGear Unified Push Server running on top of JBoss Application Server on OpenShift.
 
+## Installation
+The AeroGear Unified Push Server defaults to using MySQL. When creating your application, you'll also want to add the MySQL cartridge:
+
+```
+rhc app create <APP> ag-unified-push mysql-5.1
+```
+
 ## Template Repository Layout
 
     .openshift/        Location for OpenShift specific files

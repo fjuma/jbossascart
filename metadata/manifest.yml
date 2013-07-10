@@ -1,7 +1,7 @@
 Name: jbossas
 Cartridge-Short-Name: JBOSSAS
-Display-Name: JBoss Application Server 7
-Description: "The leading open source Java EE6 application server for enterprise Java applications. Popular development frameworks include Seam, CDI, Weld, and Spring."
+Display-Name: AeroGear Unified Push Server 0.8.0
+Description: "AeroGear Unified Push Server is a server that allows native push notifications to be sent to different mobile operating systems. Runs on top of JBoss Application Server 7."
 Version: '7'
 License: LGPL
 License-Url: http://www.gnu.org/copyleft/lesser.txt
@@ -14,7 +14,7 @@ Categories:
   - java
   - jboss
   - jee_full_profile
-Website: http://www.jboss.org
+Website: http://aerogear.org
 Help-Topics:
   "Developer Center": https://www.openshift.com/developers
 Cart-Data:

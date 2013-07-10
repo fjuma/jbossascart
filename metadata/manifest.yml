@@ -2,7 +2,7 @@ Name: ag-unified-push
 Cartridge-Short-Name: AG_UNIFIED_PUSH
 Display-Name: AeroGear Unified Push Server 0.8.0
 Description: "AeroGear Unified Push Server is a server that allows native push notifications to be sent to different mobile operating systems. Runs on top of JBoss Application Server 7."
-Version: '7'
+Version: 0.8.0
 License: LGPL
 License-Url: http://www.gnu.org/copyleft/lesser.txt
 Vendor: Red Hat

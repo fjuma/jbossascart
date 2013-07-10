@@ -4,21 +4,13 @@ Provides the AeroGear Unified Push Server on OpenShift.
 
 ## Template Repository Layout
 
-    deployments/       Location for built WARs (details below)
-    src/               Example Maven source structure
-    pom.xml            Example Maven build file
     .openshift/        Location for OpenShift specific files
-      config/          location for configuration files such as standalone.xml
       action_hooks/    See the Action Hooks documentation [1]
       markers/         See the Markers section [2]
 
 \[1\] [Action Hooks documentation](https://github.com/openshift/origin-server/blob/master/node/README.writing_applications.md#action-hooks)
 \[2\] [Markers](#markers)
 
-Note: Every time you push, everything in your remote repo directory is recreated.
-      Please store long term items (like an sqlite database) in the OpenShift
-      data directory, which will persist between pushes of your repo.
-      The OpenShift data directory is accessible via an environment variable `OPENSHIFT_DATA_DIR`.
 
 ## Layout and deployment option details
 

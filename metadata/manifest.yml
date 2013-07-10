@@ -24,6 +24,9 @@ Cart-Data:
   - Key: OPENSHIFT_TMP_DIR
     Type: environment
     Description: "Directory to store application temporary files."
+  - Key: OPENSHIFT_REPO_DIR
+    Type: environment
+    Description: "Application root directory where application files reside. This directory is reset every time you do a git-push"
   - Key: OPENSHIFT_JBOSSAS_HTTP_PORT
     Type: environment
     Description: "Internal port to which the web-framework binds to."

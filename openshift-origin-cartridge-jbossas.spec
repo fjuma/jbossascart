@@ -1,15 +1,14 @@
-%global cartridgedir %{_libexecdir}/openshift/cartridges/jbossas
+%global cartridgedir %{_libexecdir}/openshift/cartridges/ag-unified-push
 %global jbossver 7.1.1.Final
-%global oldjbossver 7.1.0.Final
 
-Summary:       Provides JBossAS7 support
-Name:          openshift-origin-cartridge-jbossas
+Summary:       Provides the AeroGear Unified Push Server on top of JBossAS7
+Name:          openshift-origin-cartridge-ag-unified-push
 Version: 1.4.1
 Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
 URL:           http://www.openshift.com
-Source0:       https://github.com/fjuma/jbossascart/blob/master/jbossascart.tar.gz
+Source0:       https://github.com/fjuma/jbossascart/archive/master.zip
 Requires:      rubygem(openshift-origin-node)
 Requires:      openshift-origin-node-util
 Requires:      lsof
@@ -29,10 +28,8 @@ Requires:      maven
 BuildRequires: jpackage-utils
 BuildArch:     noarch
 
-Obsoletes: openshift-origin-cartridge-jbossas-7
-
 %description
-Provides JBossAS support to OpenShift. (Cartridge Format V2)
+Provides the AeroGear Unified Push Server on top of JBossAS7 on OpenShift. (Cartridge Format V2)
 
 
 %prep
@@ -74,15 +71,15 @@ alternatives --set jbossas-7 /usr/share/jboss-as
 # the postgresql module is added to jboss as7.* upstream.
 mkdir -p /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
 ln -fs /usr/share/java/postgresql-jdbc3.jar /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main
-cp -p %{cartridgedir}/versions/7/modules/postgresql_module.xml /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main/module.xml
+cp -p %{cartridgedir}/versions/0.8.0/modules/postgresql_module.xml /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main/module.xml
 
 # Add the AeroGear netty module
 mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
-ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/netty/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
+ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/netty/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
 
 # Add the AeroGear SimplePush module
 mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
-ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/simplepush/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
+ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/simplepush/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
 
 %posttrans
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}
@@ -91,7 +88,7 @@ ln -fs %{cartridgedir}/versions/7/modules/org/jboss/aerogear/simplepush/main/* /
 %files
 %dir %{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}/bin/
-%attr(0755,-,-) %{cartridgedir}/versions/7/bin/
+%attr(0755,-,-) %{cartridgedir}/versions/0.8.0/bin/
 %attr(0755,-,-) %{cartridgedir}/hooks/
 %{cartridgedir}
 %doc %{cartridgedir}/README.md

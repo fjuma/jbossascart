@@ -532,7 +532,7 @@
     </interfaces>
 
     <socket-binding-group name="standard-sockets" default-interface="public" port-offset="0">
-        <socket-binding name="http" port="8099"/>
+        <socket-binding name="http" port="8080"/>
         <socket-binding name="jacorb" interface="unsecure" port="3528"/>
         <socket-binding name="jacorb-ssl" interface="unsecure" port="3529"/>
         <socket-binding name="jgroups-tcp" port="7600"/>
@@ -542,7 +542,7 @@
         <socket-binding name="messaging-throughput" port="5455"/>
         <socket-binding name="osgi-http" interface="management" port="8090"/>
         <socket-binding name="remoting" port="4447"/>
-        <socket-binding name="simplepush" port="8080"/>
+        <socket-binding name="simplepush" port="15009"/>
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <outbound-socket-binding name="mail-smtp">

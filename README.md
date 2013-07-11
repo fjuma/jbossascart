@@ -21,15 +21,15 @@ rhc app create <APP> ag-unified-push mysql-5.1
 
 ## Environment Variables
 
-The `jbossas` cartridge provides several environment variables to reference for ease
+The `ag-unified-push` cartridge provides several environment variables to reference for ease
 of use:
 
     OPENSHIFT_AG_UNIFIED_PUSH_IP                         The IP address used to bind JBossAS
     OPENSHIFT_AG_UNIFIED_PUSH_HTTP_PORT                  The JBossAS listening port
-    OPENSHIFT_AG_UNIFIED_PUSH_CLUSTER_PORT               TODO
-    OPENSHIFT_AG_UNIFIED_PUSH_MESSAGING_PORT             TODO
-    OPENSHIFT_AG_UNIFIED_PUSH_MESSAGING_THROUGHPUT_PORT  TODO
-    OPENSHIFT_AG_UNIFIED_PUSH_REMOTING_PORT              TODO
+    OPENSHIFT_AG_UNIFIED_PUSH_CLUSTER_PORT               
+    OPENSHIFT_AG_UNIFIED_PUSH_MESSAGING_PORT             
+    OPENSHIFT_AG_UNIFIED_PUSH_MESSAGING_THROUGHPUT_PORT  
+    OPENSHIFT_AG_UNIFIED_PUSH_REMOTING_PORT              
 
 For more information about environment variables, consult the
 [OpenShift Application Author Guide](https://github.com/openshift/origin-server/blob/master/node/README.writing_applications.md).

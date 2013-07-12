@@ -74,12 +74,13 @@ ln -fs /usr/share/java/postgresql-jdbc3.jar /etc/alternatives/jbossas-7/modules/
 cp -p %{cartridgedir}/versions/0.8.0/modules/postgresql_module.xml /etc/alternatives/jbossas-7/modules/org/postgresql/jdbc/main/module.xml
 
 # Add the AeroGear netty module
+mkdir -p %{cartridgedir}/usr/modules
 mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
-ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/netty/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/netty/main
+ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/netty/main/* %{cartridgedir}/usr/modules/org/jboss/aerogear/netty/main
 
 # Add the AeroGear SimplePush module
 mkdir -p /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
-ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/simplepush/main/* /etc/alternatives/jbossas-7/modules/org/jboss/aerogear/simplepush/main
+ln -fs %{cartridgedir}/versions/0.8.0/modules/org/jboss/aerogear/simplepush/main/* %{cartridgedir}/usr/modules/org/jboss/aerogear/simplepush/main
 
 %posttrans
 %{_sbindir}/oo-admin-cartridge --action install --source %{cartridgedir}

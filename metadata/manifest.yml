@@ -125,5 +125,10 @@ Endpoints:
     Private-Port-Name: REMOTING_PORT
     Private-Port:      4447
     Public-Port-Name:  REMOTING_PROXY_PORT
+  - Private-IP-Name:   IP
+    Private-Port-Name: NETTY_PORT
+    Private-Port:      15009
+    Public-Port-Name:  NETTY_PROXY_PORT
+    Options:           { "ssl_to_gear": true }
 Additional-Control-Actions:
     - threaddump
